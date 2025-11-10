@@ -1,6 +1,6 @@
 package com.grinderwolf.swm.clsm;
 
-import javassist.LoaderClassPath;
+import javassist.ByteArrayClassPath;
 import javassist.CannotCompileException;
 import javassist.ClassPool;
 import javassist.CtClass;
@@ -145,7 +145,7 @@ public class NMSTransformer implements ClassFileTransformer {
 
                 try {
                     ClassPool pool = ClassPool.getDefault();
-                    pool.appendClassPath(new LoaderClassPath(classLoader));
+                    pool.appendClassPath(new ByteArrayClassPath(fixedClassName, bytes));
                     CtClass ctClass = pool.get(fixedClassName);
 
                     for (Change change : changes.get(className)) {
