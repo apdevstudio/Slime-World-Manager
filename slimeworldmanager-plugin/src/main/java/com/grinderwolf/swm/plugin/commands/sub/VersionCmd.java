@@ -7,10 +7,6 @@ import lombok.Getter;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-
 @Getter
 public class VersionCmd implements Subcommand {
 
@@ -23,10 +19,5 @@ public class VersionCmd implements Subcommand {
                 .getDescription().getVersion() + ChatColor.GRAY + ", which supports up to Slime Format " + ChatColor.AQUA + "v" + SlimeFormat.SLIME_VERSION + ChatColor.GRAY + ".");
 
         return true;
-    }
-
-    @Override
-    public List<String> onTabComplete(CommandSender sender, String[] args) {
-        return Collections.emptyList();
     }
 }
